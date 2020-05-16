@@ -1,2 +1,5 @@
 name: Peter Dimov
 description: This is a description.
+
+exclude:
+  - README.md
