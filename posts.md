@@ -7,6 +7,6 @@ title: Posts
 {% for month in posts_by_month %}
 ## {{ month.name }}
 {% for post in month.items %}
-[{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date_to_string }})
+* [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date_to_string }})
 {% endfor %}
 {% endfor %}
