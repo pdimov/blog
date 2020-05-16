@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Posts
+title: Archive
 ---
 
 {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y %b'" %}
