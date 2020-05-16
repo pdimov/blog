@@ -1,18 +1,11 @@
 ---
 layout: page
-title: "About"
+title: About
 ---
-
-# About
-
-## Description
 
 This is an about page.
 
-## Code
+## Libraries
 
-```
-int main()
-{
-}
-```
+* [Boost.SmartPtr](https://boost.org/libs/smart_ptr)
+* [Boost.Bind](https://boost.org/libs/bind)
