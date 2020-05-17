@@ -8,11 +8,13 @@ layout: default
   {{ content }}
 </div>
 
+<!--
 {% if site.related_posts.size >= 1 %}
 <div class="related">
   <h2>Related posts</h2>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
+    {% unless post.hidden %}
       <li>
         <h3>
           <a href="{{ site.baseurl }}{{ post.url }}">
@@ -21,7 +23,9 @@ layout: default
           </a>
         </h3>
       </li>
+    {% endunless %}
     {% endfor %}
   </ul>
 </div>
 {% endif %}
+-->
