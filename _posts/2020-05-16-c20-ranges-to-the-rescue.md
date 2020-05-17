@@ -101,11 +101,11 @@ The reason it doesn't exist is that `std::accumulate` is defined in `<numeric>`.
 While the algorithms in the appropriately named `<algorithm>` have `ranges::`
 versions in C++20, those in `<numeric>` do not.
 
-They do not because C++20 got at once two major features, Ranges and Concepts,
-which meant that the standard library algorithms got to be modernized twice,
-once to acquire a range-aware version, placed in `std::ranges::`, and once to
-be properly constrained via concepts. This, in turn, meant that those concepts
-needed to be designed.
+They do not because C++20 got two major features, Ranges and Concepts, at the
+same time, which meant that the standard library algorithms got to be
+modernized twice, once to acquire a range-aware version, placed in
+`std::ranges::`, and once to be properly constrained via concepts. This, in
+turn, meant that those concepts needed to be designed.
 
 There wasn't enough time to properly design the numeric concepts required for
 the algorithms in `<numeric>` to be brought up to date, although [work on that
