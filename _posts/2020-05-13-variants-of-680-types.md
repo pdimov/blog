@@ -44,7 +44,7 @@ The second problem was the implementation of
 [`mp11::mp_with_index`](https://www.boost.org/doc/libs/1_73_0/libs/mp11/doc/html/mp11.html#mp_with_indexni_f),
 which powers `variant2::visit`. It generates a switch of however many
 alternatives are requested (680 in our case), but did so 16 alternatives
-at a time, which meant 40+ switch statements. This, again for 200 types,
+at a time, which meant 40+ switch statements. This, again for 200 types, often
 [exceeded the ability](https://godbolt.org/z/u68FSf) of CE's version of g++.
 
 I [changed](https://github.com/boostorg/mp11/commit/13c36a793c397c1fc75c4e4c5be10e1338680622)
