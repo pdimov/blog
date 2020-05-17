@@ -94,6 +94,8 @@ in `simdjson` came from!
 
 I had heard of this library because of my involvement with
 [proposed-for-Boost.JSON](https://github.com/CPPAlliance/json) by Vinnie Falco,
-a new JSON library that also takes performance seriously (among other things.)
+a new JSON library that also
+[takes performance seriously](http://vinniefalco.github.io/doc/json/json/benchmarks.html)
+([among other things](http://vinniefalco.github.io/doc/json/json/overview.html).)
 
 It's a small world.
