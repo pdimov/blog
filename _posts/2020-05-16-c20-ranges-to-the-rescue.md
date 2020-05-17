@@ -67,8 +67,11 @@ algorithms, which take _projections_."
 ```
 TextureAtlas stitchImages(const std::vector<Image>& images)
 {
-    const auto width = std::ranges::accumulate( images, 0, {}, &Image::width );
-    const auto height = std::ranges::max( images, {}, &Image::height );
+    const auto width = std::ranges::accumulate( images, 0, {},
+        &Image::width );
+
+    const auto height = std::ranges::max( images, {},
+        &Image::height );
 
     // ...
 ```
@@ -84,7 +87,8 @@ after the projection.
 
 That's easily fixed:
 ```
-    const auto height = std::ranges::max( images, {}, &Image::height ).height;
+    const auto height = std::ranges::max( images, {},
+        &Image::height ).height;
 ```
 but allows me to offer some entirely unsolicited and unwarranted advice. You
 know those people who tell you to "almost always use `auto`"? Don't listen to
