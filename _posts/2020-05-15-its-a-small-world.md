@@ -6,8 +6,8 @@ hidden: true
 
 I came across [this article](https://www.viva64.com/en/b/0733/),
 in which the author (a fan of Rust by the look of it) takes apart
-claims by [Antony Polukhin](http://apolukhin.github.io/en/) that
-Rust is not highly superior to C++.
+outrageous claims by [Antony Polukhin](http://apolukhin.github.io/en/)
+that Rust is not highly superior to C++.
 
 Antony is a
 [Boost author and maintainer](http://apolukhin.github.io/en/developer.html),
@@ -87,7 +87,7 @@ I started reading posts by Geoff Langdale, first on the
 [Hyperscan blog](https://www.hyperscan.io/2015/10/20/match-regular-expressions/),
 then on [his own](https://branchfree.org/). Clever SIMD tricks applied
 to regex scanning were certainly present, but also was a mention
-of [simdjson](https://simdjson.org/). So that was where the SIMD
+of [simdjson](https://simdjson.org/). So that was where all that SIMD
 in `simdjson` came from!
 
 I had heard of this library because of my involvement with
