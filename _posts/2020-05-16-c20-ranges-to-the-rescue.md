@@ -80,7 +80,7 @@ Modern C++ wins again!
 
 Or maybe not. The above certainly feels like it ought to work, but it has
 two problems. First, when I wrote the above, I certainly expected
-`auto const height` to be the maximum image height, but it isn't. Instead,
+`const auto height` to be the maximum image height, but it isn't. Instead,
 as written, it actually holds _the image_ with the maximum height, because
 `max` returns a reference to the actual element, not the maximum value
 after the projection.
