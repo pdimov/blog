@@ -58,7 +58,7 @@ _substitution failure_. The result is that the operator is not considered when `
 a placeholder, which is exactly what we want.
 
 When `T` is not a tuple (which means one of `std::tuple`, `std::pair`, `std::array`),
-`std::tuple_size<X>::value` will not be defined, and we again get our desired substitution
+`std::tuple_size<T>::value` will not be defined, and we again get our desired substitution
 failure.
 
 Does this work?
