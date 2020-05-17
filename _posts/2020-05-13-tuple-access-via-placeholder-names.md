@@ -4,7 +4,7 @@ title: Tuple Access via Placeholder Names
 hidden: true
 ---
 
-The elements of a `std::tuple` `tp` are accessed by `get<0>(tp)`, `get<1>(tp)`
+The elements of a `std::tuple` `tp` are accessed by `get<0>(tp)`, `get<1>(tp)`,
 and so on. A tuple is just an anonymous struct, so it would have been kind of
 nice if we could use `tp._1`, `tp._2`, and so on, instead. (Since elements
 have no names, we have to synthesize some. The [Circle](https://www.circle-lang.org/)

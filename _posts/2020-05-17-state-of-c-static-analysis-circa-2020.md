@@ -58,11 +58,10 @@ f3():
       |            ^~
 ```
 
-In addition to the warning in `f1`, it even zapped the pointer `nullptr`. An interesting
+In addition to the warning in `f1`, it even zapped the pointer to `nullptr`. An interesting
 choice, with which not everyone agrees, but in my opinion returning a null pointer is
-much better than returning a dangling pointer to just-deallocated stack memory.
-
-Which is exactly what happens in `f2` and `f3`.
+much better than returning a dangling pointer to just-deallocated stack memory... which is
+exactly what happens in `f2` and `f3`.
 
 Let's try Microsoft [`cl.exe 19.24 /O2 /std:c++latest /W4 /analyze`](https://godbolt.org/z/OSPCjC):
 
@@ -71,7 +70,7 @@ Let's try Microsoft [`cl.exe 19.24 /O2 /std:c++latest /W4 /analyze`](https://god
 <source>(17) : warning C4172: returning address of local variable or temporary: x
 ```
 
-That's better, but not enough better. `std::string_view` is a rather important type, and
+That's better, but not better enough. `std::string_view` is a rather important type, and
 a potential rich source of lifetime mistakes.
 
 Maybe Intel [`icc 19.0.1 -O2 -std=c++17 -Wall -Wextra`](https://godbolt.org/z/-2jd3J) will fare better?
@@ -123,7 +122,9 @@ Maybe not. Let's try our real last hope, the experimental [`-Wlifetime` build of
     ^~~~~~~~~~
 ```
 
-Interesting, but encouraging. Not only did `-Wlifetime` catch `f1` and `f3` (but not `f2` for some reason!), the
+Interesting. Not only did `-Wlifetime` catch `f1` and `f3` (but not `f2` for some reason!), the
 normal `-Wreturn-stack-address` warning caught `f3` this time as well, in addition to `f1` and `f2`.
 
-(Herb Sutter has [an interesting post about the experimental `-Wlifetime` compiler](https://herbsutter.com/2018/09/20/lifetime-profile-v1-0-posted/).)
+(Herb Sutter has [an interesting post about the experimental
+`-Wlifetime` compiler](https://herbsutter.com/2018/09/20/lifetime-profile-v1-0-posted/). It can't arrive soon enough
+if you ask me.)
