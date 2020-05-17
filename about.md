@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I authored the following [Boost](https://www.boost.org/) libraries:
+I authored and maintain the following [Boost](https://www.boost.org/) libraries:
 
 * [Assert](https://boost.org/libs/assert)
 * [Bind](https://boost.org/libs/bind)
