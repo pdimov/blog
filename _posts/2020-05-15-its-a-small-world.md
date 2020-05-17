@@ -24,34 +24,36 @@ is [her compile-time regular expression library](https://github.com/hanickadot/c
 
 So I decided to look at CTRE. It's a pretty interesting library, and
 the most interesting part of it is the resuling assembly code. The
-regular expression `a*b`, for instance, is matched via
+regular expression `[0-9]+`, for instance, when passed to `ctre::search`,
+[generates](https://godbolt.org/z/3KHPbE)
 ```
-.LBB0_25:
         lea     rdx, [rcx + rax]
-.LBB0_26:
+.LBB0_35:
+        mov     rdi, rdx
+        sub     rdi, rcx
         xor     esi, esi
-.LBB0_27:
+.LBB0_36:
         movzx   ebx, byte ptr [rcx + rsi]
-        cmp     bl, 97
-        jne     .LBB0_28
+        add     bl, -48
+        cmp     bl, 10
+        jae     .LBB0_37
         add     rsi, 1
         cmp     rax, rsi
-        jne     .LBB0_27
-        jmp     .LBB0_31
-.LBB0_28:
-        cmp     bl, 98
-        je      .LBB0_29
-.LBB0_31:
+        jne     .LBB0_36
+        mov     rsi, rdi
+.LBB0_37:
+        test    rsi, rsi
+        jne     .LBB0_38
         add     rcx, 1
         add     rax, -1
         cmp     rcx, rdx
-        jne     .LBB0_26
-.LBB0_32:
+        jne     .LBB0_35
+.LBB0_27:
         xor     ebp, ebp
-        jmp     .LBB0_33
-.LBB0_29:
+        jmp     .LBB0_28
+.LBB0_38:
         mov     bpl, 1
-.LBB0_33:
+.LBB0_28:
 ```
 which may not be the exact same code you or I would have written,
 but it's fairly readable and does the same basic loop and
