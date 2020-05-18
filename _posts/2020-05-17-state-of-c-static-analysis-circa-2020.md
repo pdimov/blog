@@ -1,7 +1,6 @@
 ---
 layout: post
 title: State of C++ Static Analysis circa 2020
-hidden: true
 ---
 
 Take the following code:

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: C++20 Ranges to the Rescue
-hidden: true
 ---
 
 Vittorio Romeo [documents](https://vittorioromeo.info/index/blog/gamedev_modern_cpp_thoughts.html)

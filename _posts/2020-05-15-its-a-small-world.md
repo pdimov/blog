@@ -1,7 +1,6 @@
 ﻿---
 layout: post
 title: It's a Small World
-hidden: true
 ---
 
 I came across [this article](https://www.viva64.com/en/b/0733/),

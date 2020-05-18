@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Variants of 680 Types
-hidden: true
 ---
 
 [Richard Hodges](https://cppalliance.org/people/richard) asked me whether

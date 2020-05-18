@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Tuple Access via Placeholder Names
-hidden: true
 ---
 
 The elements of a `std::tuple` `tp` are accessed by `get<0>(tp)`, `get<1>(tp)`,
