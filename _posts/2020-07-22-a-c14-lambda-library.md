@@ -33,7 +33,7 @@ function object, they say.
 
 And you know what? They are right. It is. Here's how these looked like
 in the dark ages of C++03, when we had to use primitive tools such as
-[Boost.Lambda](https://boost.org/libs/lambda):
+[Boost.Lambda](https://www.boost.org/libs/lambda):
 
 ```
 int count_even( int const * first, int const * last )
