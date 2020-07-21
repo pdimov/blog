@@ -55,7 +55,7 @@ that take?
 I asked a highly representative sample of C++ developers (two people
 chosen at random) and they answered "3,000" and "5,000", respectively.
 
-They couldn't have been more wrong if they tried. The correct answer is *52*.
+They couldn't have been more wrong if they tried. The correct answer is **52**.
 
 Yes, implementing a lambda library that makes the above two examples
 compile and work literally fits into a blog post, as I shall demonstrate:
