@@ -30,7 +30,7 @@ is_whitespace(char):
 What's going on here? This doesn't bear any resemblance to what we wrote!
 
 Well, the first step of the explanation is that LLVM recognizes this
-`memchr(...) != 0` pattern and compiles it as if it were
+`memchr(...) != 0` pattern and understands that it's equivalent to
 
 ```
 bool is_whitespace_2( char ch )
@@ -39,10 +39,14 @@ bool is_whitespace_2( char ch )
 }
 ```
 
-It turns out that LLVM generates something
+It so happens that LLVM generates something
 [slightly different](https://godbolt.org/z/zodd9z) for `is_whitespace_2`,
-but if we [use MSVC instead](https://godbolt.org/z/YYoKKn), we can get
-something very close to the above code:
+because the pattern in `is_whitespace_2` engages a different code path
+in the optimizer.
+
+[Nevertheless](https://books.google.bg/books?id=fr5SBAAAQBAJ&pg=PT88&lpg=PT88&dq=nevertheless&source=bl&ots=HnmWRXPRU0&sig=ACfU3U3oRHjPTzabiIt6NMUTw4vcD5ozIg&hl=en&sa=X&ved=2ahUKEwjH5p3l_N7qAhVyAmMBHQSjBqkQ6AEwAXoECAoQAQ#v=onepage&q=nevertheless&f=false),
+if we [use MSVC instead](https://godbolt.org/z/YYoKKn),
+we can get something very close to the code produced for `is_whitespace`:
 
 ```
 bool is_whitespace_2(char) PROC
