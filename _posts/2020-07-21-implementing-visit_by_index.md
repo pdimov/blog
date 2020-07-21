@@ -108,7 +108,7 @@ template<class V, class... F> void visit_by_index( V&& v, F&&... f )
 
 Almost, at least in its initial iteration. To make this more suitable
 for production use, we need to handle the `valueless_by_exception()` case,
-and check that the number of function objects correspond to the number
+and check that the number of function objects matches the number
 of variant alternatives:
 
 ```
@@ -133,10 +133,11 @@ template<class V, class... F> void visit_by_index( V&& v, F&&... f )
 }
 ```
 
-How does this [work](https://godbolt.org/z/f4c4Y3)? `mp_with_index<N>( i, f )`
-(which requires `i` to be between `0` and `N-1` inclusive) calls `f` with
-`std::integral_constant<std::size_t, i>` (by generating a big `switch` over
-the possible values of `i`.)
+How does [this work](https://godbolt.org/z/f4c4Y3)?
+
+`mp_with_index<N>(i, f)` (which requires `i` to be between `0` and `N-1`
+inclusive) calls `f` with `std::integral_constant<std::size_t, i>`
+(by generating a big `switch` over the possible values of `i`.)
 
 `f` in our case is a lambda object of the form `[&](auto I){ ... }`, so `I`
 gets to be a variable of type `std::integral_constant<std::size_t, i>`.
