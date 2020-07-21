@@ -45,8 +45,8 @@ from the lambda, not the containing function, so we need to use the less
 intuitive approach of accumulating the result into a variable `r`.
 
 This may look inefficient - the loop will visit every `e` instead of
-stopping early - but compilers are smart enough to figure out that
-`r && e` does not evaluate `e` when `r` is `false`, and
+stopping early - but today's compilers are smart enough to figure out
+that `r && e` does not evaluate `e` when `r` is `false`, and
 generate [reasonably efficient code](https://godbolt.org/z/18oh5z).
 
 A tip when using Compiler Explorer: the MSVC output is significantly
