@@ -45,7 +45,7 @@ void f( std::variant<int, float> const & v )
 ```
 
 [This works](https://godbolt.org/z/WzTnd8), but having to define
-an dedicated function object is not as convenient as just using a lambda.
+a dedicated function object is not as convenient as just using a lambda.
 Lambdas, however, can't have more than one `operator()`.
 
 One solution that has been [suggested](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0051r3.pdf)
