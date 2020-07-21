@@ -60,7 +60,7 @@ bool is_whitespace_2(char) ENDP
 ```
 
 The constant 4294977024 here is 100002600 in hex, and has bits 9 (`'\t'`), 10
-(`'\r'`), 13 (`'\n'`) and 32 (`' '`) set.
+(`'\r'`), 13 (`'\n'`), and 32 (`' '`) set.
 
 So, basically, what this does is
 

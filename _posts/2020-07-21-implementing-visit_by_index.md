@@ -67,7 +67,7 @@ the types being unique?
 ```
 template<class V, class... F> void visit_by_index( V&& v, F&&... f );
 
-// Effects: if v.index() is J, calls the J-th f with get<J>(v).
+// Effects: if v.index() is I, calls the I-th f with get<I>(v).
 ```
 
 This would allow us to just do
