@@ -9,13 +9,13 @@ depending on the type in the variant. For example, when a
 `std::variant<int, float>` contains an `int x`, we want to perform
 
 ```
-    std::printf( "int: %d\n", x );
+std::printf( "int: %d\n", x );
 ```
 
 but in the case it contains a `float x`, we want
 
 ```
-    std::printf( "float: %f\n", x );
+std::printf( "float: %f\n", x );
 ```
 
 One way to do this is to define an appropriate function object
@@ -44,8 +44,8 @@ void f( std::variant<int, float> const & v )
 }
 ```
 
-[This works](https://godbolt.org/z/j3oMMs), but having to define
-an dedicated function object is not as convenient of just using a lambda.
+[This works](https://godbolt.org/z/WzTnd8), but having to define
+an dedicated function object is not as convenient as just using a lambda.
 Lambdas, however, can't have more than one `operator()`.
 
 One solution that has been [suggested](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0051r3.pdf)
@@ -61,7 +61,7 @@ the containing type.
 How about we throw all this composition and decomposition away and
 just define a visitation function that takes the lambdas directly, and
 invokes the correct one based on the containing type? Or better yet,
-based on the variant index, such that we no longer need to depend on
+based on the variant index, so that we no longer need to depend on
 the types being unique?
 
 ```
@@ -101,7 +101,7 @@ template<class V, class... F> void visit_by_index( V&& v, F&&... f )
     boost::mp11::mp_with_index<N>( v.index(), [&]( auto I )
     {
       std::tuple<F&&...> tp( std::forward<F>(f)... );
-      std::get<I>( std::move( tp ) )( std::get<I>( std::forward<V>( v ) ) );
+      std::get<I>(std::move(tp))( std::get<I>(std::forward<V>(v)) );
     } );
 }
 ```
@@ -128,12 +128,12 @@ template<class V, class... F> void visit_by_index( V&& v, F&&... f )
     boost::mp11::mp_with_index<N>( v.index(), [&]( auto I )
     {
       std::tuple<F&&...> tp( std::forward<F>(f)... );
-      std::get<I>( std::move( tp ) )( std::get<I>( std::forward<V>( v ) ) );
+      std::get<I>(std::move(tp))( std::get<I>(std::forward<V>(v)) );
     } );
 }
 ```
 
-How does this [work](https://godbolt.org/z/bG35TG)? `mp_with_index<N>( i, f )`
+How does this [work](https://godbolt.org/z/f4c4Y3)? `mp_with_index<N>( i, f )`
 (which requires `i` to be between `0` and `N-1` inclusive) calls `f` with
 `std::integral_constant<std::size_t, i>` (by generating a big `switch` over
 the possible values of `i`.)
@@ -146,10 +146,10 @@ to `T` returning `K`, we can use `I` in places where a constant expression
 of type `size_t` is expected, such as `std::get<I>`.
 
 `std::tuple<F&&...> tp( std::forward<F>(f)... );` creates a tuple referencing
-the function objects passed as arguments. `std::get<I>( std::move( tp ) )`
+the function objects passed as arguments. `std::get<I>(std::move(tp))`
 returns the `I`-th one of them, properly forwarded.
 
-`std::get<I>( std::forward<V>( v ) )`, since `I` is `v.index()`, returns a
+`std::get<I>(std::forward<V>(v))`, since `I` is `v.index()`, returns a
 reference to the type contained into `v`, again properly forwarded. Therefore,
-`std::get<I>( std::move( tp ) )( std::get<I>( std::forward<V>( v ) ) );` calls
+`std::get<I>(std::move(tp))( std::get<I>(std::forward<V>(v)) );` calls
 the correct function object with the correct argument. QED.

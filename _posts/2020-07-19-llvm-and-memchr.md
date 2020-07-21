@@ -59,15 +59,17 @@ $LN5@is_whitesp:
 bool is_whitespace_2(char) ENDP
 ```
 
-The constant 4294977024 here is 100002600 in hex, and has bits 9 (`\t`), 10
-(`\r`), 13 (`\n`) and 32 (` `) set.
+The constant 4294977024 here is 100002600 in hex, and has bits 9 (`'\t'`), 10
+(`'\r'`), 13 (`'\n'`) and 32 (`' '`) set.
 
 So, basically, what this does is
 
 ```
 bool is_whitespace_3( unsigned char ch )
 {
-    uint64_t mask = (1ull << ' ') | (1ull << '\t') | (1ull << '\r') | (1ull << '\n');
+    uint64_t mask = (1ull << ' ') | (1ull << '\t')
+        | (1ull << '\r') | (1ull << '\n');
+
     return ch <= 32 && ((1ull << ch) & mask);
 }
 ```
@@ -81,7 +83,7 @@ Well, it turns out that the `find_first_not_of` member function of `std::string`
 and `std::string_view` is commonly implemented as something along the lines of
 
 ```
-std::size_t string_view::find_first_not_of( string_view s ) const noexcept
+std::size_t string_view::find_first_not_of( string_view s ) const
 {
     char const * p = data();
     std::size_t n = size();

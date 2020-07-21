@@ -19,11 +19,13 @@ struct Q1;
 struct Q2;
 struct Q3;
 
-template<std::size_t N, class L> using combinations = mp_invoke_q<
-    mp_cond<
-        mp_bool<N == 0>, Q1,
-        mp_bool<N == mp_size<L>::value>, Q2,
-        mp_true, Q3>, mp_size_t<N>, L>;
+template<std::size_t N, class L> using combinations =
+    mp_invoke_q<
+        mp_cond<
+            mp_bool<N == 0>, Q1,
+            mp_bool<N == mp_size<L>::value>, Q2,
+            mp_true, Q3>,
+        mp_size_t<N>, L>;
 
 // N == 0
 struct Q1
@@ -42,8 +44,10 @@ struct Q3
 {
     template<class N, class L, class R = mp_pop_front<L>> using fn =
         mp_append<
-            mp_transform_q<mp_bind_back<mp_push_front, mp_front<L>>,
-                combinations<N::value - 1, R>>,
+            mp_transform_q<
+                mp_bind_back<mp_push_front, mp_front<L>>,
+                combinations<N::value - 1, R>
+            >,
             combinations<N::value, R>
         >;
 };
