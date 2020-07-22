@@ -115,8 +115,8 @@ BINARY_LAMBDA(^, bit_xor)
 UNARY_LAMBDA(~, bit_not)
 ```
 
-This even generates [reasonably](https://godbolt.org/z/jj1fb3)
-[efficient](https://godbolt.org/z/xcEEx7) [code](https://godbolt.org/z/s1qT94).
+This even generates [reasonably](https://godbolt.org/z/fMM4bs)
+[efficient]https://godbolt.org/z/1sq56o) [code](https://godbolt.org/z/KxM1oe).
 
 What's the trick here?
 
