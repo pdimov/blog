@@ -92,7 +92,7 @@ The odd-looking (if you haven't seen one before) line
 template<class... T> tuple(T...) -> tuple<T...>;
 ```
 
-is a C++17 _deduction guiide_. It allows us to use the template `tuple`
+is a C++17 _deduction guide_. It allows us to use the template `tuple`
 directly as if it were a type:
 
 ```
