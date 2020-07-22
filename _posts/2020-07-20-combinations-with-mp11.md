@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Combinations with Mp11
-hidden: true
 ---
 
 I was asked how can Mp11 be used to implement a `combinations`

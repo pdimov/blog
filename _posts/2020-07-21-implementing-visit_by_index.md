@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Implementing visit_by_index
-hidden: true
 ---
 
 When manipulating variants, one often needs to perform different actions

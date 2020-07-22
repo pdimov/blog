@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Implementing tuple_all_true
-hidden: true
 ---
 
 Suppose you need a function `tuple_all_true` that, when invoked on a tuple,

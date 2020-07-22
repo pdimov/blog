@@ -1,7 +1,6 @@
 ---
 layout: post
 title: LLVM and memchr
-hidden: true
 ---
 
 LLVM, the back end of Clang, does something remarkable with this
