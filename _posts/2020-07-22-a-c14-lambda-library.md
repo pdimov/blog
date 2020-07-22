@@ -116,7 +116,7 @@ UNARY_LAMBDA(~, bit_not)
 ```
 
 This even generates [reasonably](https://godbolt.org/z/fMM4bs)
-[efficient]https://godbolt.org/z/1sq56o) [code](https://godbolt.org/z/KxM1oe).
+[efficient](https://godbolt.org/z/1sq56o) [code](https://godbolt.org/z/KxM1oe).
 
 What's the trick here?
 
