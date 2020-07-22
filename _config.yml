@@ -3,6 +3,7 @@ tagline:
 description: This is Peter Dimov's C++ blog.
 paginate: 5
 permalink: pretty
+future: true
 
 author:
   name: Peter Dimov
