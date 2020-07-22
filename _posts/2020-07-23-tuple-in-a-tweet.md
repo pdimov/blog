@@ -38,7 +38,7 @@ int main()
 It's missing an implementation of the basic tuple primitives
 `tuple_size`, `tuple_element_t` and `get`, so you can't do much
 else with it yet. But before we add these, let's first figure out
-how what we have so far it works.
+how what we have so far works.
 
 The basic idea is that we want to derive `tuple<T1, T2, T3>` from
 `tuple_element_base<0, T1>`, `tuple_element_base<1, T2>`, and
@@ -52,7 +52,7 @@ Since Mp11 likes types better than integers, we'll declare
 `tuple_element_base` to have two type parameters, and will use
 `mp_size_t<I>` instead of just `I` as the first template parameter.
 
-So now, given `tuple<T...>` we need to somehow turn the parameter
+So now, given `tuple<T...>`, we need to somehow turn the parameter
 pack `T...` into `tuple_element_base<mp_size_t<I>, T>...`.
 
 First, we prepare type lists holding the two sequences we need,
