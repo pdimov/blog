@@ -1,7 +1,6 @@
 ---
 layout: post
 title: A C++14 Lambda Library
-hidden: true
 ---
 
 In C++11 and later, we have language support for lambda expressions,
