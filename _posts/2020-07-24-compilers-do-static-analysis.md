@@ -57,8 +57,8 @@ why don't they _tell us that_? Something like "Warning: function invokes undefin
 on all control paths, you might want to check your code, mate", except less formal.
 
 Who cares about that, some might say, nobody writes such code anyway, this will catch
-no bugs. Well, I have obviously oversimplified a bit. Let's take a more realistic example,
-such as this one:
+no bugs. Well, I have obviously oversimplified a bit. Let's take a slightly more
+realistic example, such as this one:
 
 ```
 int slice_sum( std::vector<int> const& v, int i, int n )
