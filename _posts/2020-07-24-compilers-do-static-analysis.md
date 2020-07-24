@@ -24,7 +24,7 @@ which goes out of scope. Second, the check in `g` is reversed; in the case
 `p` is a null pointer, it dereferences it, instead of doing the opposite --
 dereference `p` only when it's not null.
 
-This is what [GCC emits](https://godbolt.org/z/P9o8dK) for `g`:
+This is what [GCC emits](https://godbolt.org/z/rbn9KP) for `g`:
 
 ```
 g(int*):
@@ -113,7 +113,6 @@ Because we are put here on this planet to suffer, that is why.
 
 (Also because `assert` is a macro that the compilers do not even see, and they
 don't know that `__assert_fail` is the assertion failure handler, and contracts,
-which would have allowed us to write `[[assert: i+j < v.size()]]` or even, God
-forbid, `[[pre: i+j < v.size()]]`, were removed from C++20 as being too useful,
-but those are just random second-order manifestations of the cosmic need for
-suffering.)
+which would have allowed us to write `[[assert: i+j < v.size()]]` , were removed
+from C++20 as being too useful, but those are just random second-order
+manifestations of the cosmic need for suffering.)
