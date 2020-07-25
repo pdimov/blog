@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Compilers Do Static Analysis, They Just Don't Tell You
-hidden: true
 ---
 
 Let's take the following code:

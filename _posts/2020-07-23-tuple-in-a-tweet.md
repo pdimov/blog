@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Tuple in a Tweet
-hidden: true
 ---
 
 Some time ago [I tweeted](https://twitter.com/pdimov2/status/1222564429016989696)
