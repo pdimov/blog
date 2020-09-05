@@ -4,8 +4,7 @@ title: From SIMD to AST Extraction
 hidden: true
 ---
 
-Suppose we have the functions (in C++, but also in the
-mathematical sense)
+Suppose we have the functions
 
 ```
 float f( float x )
