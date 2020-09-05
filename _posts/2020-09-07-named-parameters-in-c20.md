@@ -106,7 +106,7 @@ on a [Boost.Beast](https://boost.org/libs/beast) websocket:
 #include <boost/beast/core/tcp_stream.hpp>
 #include <chrono>
 
-void f1( boost::beast::websocket::stream<boost::beast::tcp_stream>& ws )
+void f1(boost::beast::websocket::stream<boost::beast::tcp_stream>& ws)
 {
     auto opt = boost::beast::websocket::stream_base::timeout();
 
@@ -127,7 +127,7 @@ literals:
 
 using namespace std::chrono_literals;
 
-void f2( boost::beast::websocket::stream<boost::beast::tcp_stream>& ws )
+void f2(boost::beast::websocket::stream<boost::beast::tcp_stream>& ws)
 {
     ws.set_option({ .idle_timeout = 10s, .keep_alive_pings = true });
 }
