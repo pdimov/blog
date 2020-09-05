@@ -135,3 +135,38 @@ void f2( boost::beast::websocket::stream<boost::beast::tcp_stream>& ws )
 Apart from the slightly awkward `({ ... })` syntax and the need to observe
 the right parameter order, that's not that far from the ideal; and it's
 considerably better than `f1`.
+
+This also works for constructors. Consider the hypothetical `vector` class
+that is like `std::vector`, except with its various constructor overloads
+replaced with one taking named parameters:
+
+```
+template<class T, class A = std::allocator<T>> class vector
+{
+private:
+
+    struct params
+    {
+        std::size_t size = 0;
+        T element{};
+        std::size_t capacity = 0;
+        A allocator{};
+    };
+
+public:
+
+    explicit vector( params p );
+};
+```
+
+This is [how it's used](https://godbolt.org/z/x17fdY):
+
+```
+auto f()
+{
+    vector<int> v{{ .size = 4, .element = 11, .capacity = 64 }};
+    return v;
+}
+```
+
+Again, apart from the odd `{{ ... }}` syntax, not that bad.
