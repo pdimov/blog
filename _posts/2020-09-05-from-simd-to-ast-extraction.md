@@ -40,7 +40,7 @@ suppose, for the sake of discussion, that it's 2008, the
 compilers don't autovectorize, and we still want to employ SIMD.
 
 One elegant technique that allows us to keep our functions
-mostly as-is is to convert them to templates:
+mostly unchanged is to convert them to templates:
 
 ```
 template<class T> T f( T x )
