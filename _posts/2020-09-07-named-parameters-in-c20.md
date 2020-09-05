@@ -21,7 +21,7 @@ C++ is obviously not such a language and there have been
 numerous proposals to rectify this omission, unfortunately none
 of them successful. The latest attempt is Axel Naumann's paper
 [Self-explanatory Function Arguments](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0671r2.html),
-which attempts to attack the problem from another angle by just
+which tries to attack the problem from another angle by just
 allowing normal function calls to be tagged with the parameter
 name, as in
 
@@ -137,7 +137,7 @@ Apart from the slightly awkward `({ ... })` syntax and the need to observe
 the right parameter order, that's not that far from the ideal; and it's
 considerably better than `f1`.
 
-This also works for constructors. Consider the hypothetical `vector` class
+This also works for constructors. Consider this hypothetical `vector` class
 that is like `std::vector`, except with its various constructor overloads
 replaced with one taking named parameters:
 
