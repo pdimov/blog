@@ -57,9 +57,9 @@ implementations. Microsoft's STL, for example, is now
 Microsoft's customers cannot abide by a binary attribution clause, code
 inside the STL can only use a license that doesn't impose one. As explained
 by Stephan T. Lavavej in [this Reddit comment](https://www.reddit.com/r/cpp/comments/gr18ig/faster_integer_parsing/frxbit4/),
-the two licenses that meet this requirement are the Boost Software License and the
-[Apache 2.0 License with LLVM Exception](https://llvm.org/foundation/relicensing/LICENSE.txt),
-and the Boost license is simpler, clearer, better known, and already
-pre-approved in many organizations.
+the two licenses that meet this requirement are the Boost Software License
+and the Apache 2.0 License with LLVM Exception, and the Boost license is
+simpler, clearer, better known, and already pre-approved in many
+organizations.
 
 Use it. The C++ community will appreciate your generosity.
