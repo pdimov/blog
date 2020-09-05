@@ -62,4 +62,4 @@ the two licenses that meet this requirement are the Boost Software License and t
 and the Boost license is simpler, clearer, better known, and already
 pre-approved in many organizations.
 
-Use it.
+Use it. The C++ community will appreciate your generosity.
