@@ -1,7 +1,6 @@
 ---
 layout: post
 title: From SIMD to AST Extraction
-hidden: true
 ---
 
 Suppose we have the functions
