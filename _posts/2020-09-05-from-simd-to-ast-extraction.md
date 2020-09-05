@@ -63,7 +63,7 @@ using m128 = __attribute__(( vector_size( 4*sizeof(float) ) )) float;
 ```
 
 so that we can now rewrite `h` to
-[work at four elements at a time](https://godbolt.org/z/zh3Tbv):
+[work at four elements at a time](https://godbolt.org/z/Y8xqd9):
 
 ```
 void h( float const * x, float const * y, float * z, std::size_t n )
@@ -72,15 +72,15 @@ void h( float const * x, float const * y, float * z, std::size_t n )
 
     for( ; i + 3 < n; i += 4 )
     {
-        m128 mx;
-        std::memcpy( &mx, x + i, sizeof( m128 ) );
+        m128 xi;
+        std::memcpy( &xi, x + i, sizeof( m128 ) );
 
-        m128 my;
-        std::memcpy( &my, y + i, sizeof( m128 ) );
+        m128 yi;
+        std::memcpy( &yi, y + i, sizeof( m128 ) );
 
-        m128 mz = g( mx, my );
+        m128 zi = g( xi, yi );
 
-        std::memcpy( z + i, &mz, sizeof( m128 ) );
+        std::memcpy( z + i, &zi, sizeof( m128 ) );
     }
 
     for( ; i < n; ++i )
