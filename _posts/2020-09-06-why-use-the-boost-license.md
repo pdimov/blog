@@ -26,10 +26,10 @@ except it continues with
 
 and the others contain no such exemption.
 
-For the purposes of copyright law, when you compile code, the resulting
-object code, library code or executable program is considered _a derived
-work_. That is, the original license terms still apply to it as they would
-have applied to a copy of the source code, processed in some other way
+For the purposes of copyright law, when you compile the source text, the
+resulting object code, library code or executable program is considered _a
+derived work_. That is, the original license terms still apply to it as they
+would have applied to a copy of the source code, processed in some other way
 (reformatted, for instance.)
 
 What this means is that the requirement to include the copyright notice
@@ -54,8 +54,12 @@ It's true that it's a requirement to get your code in Boost, but that's not
 the only benefit. It can also get your code in standard library
 implementations. Microsoft's STL, for example, is now
 [open source on Github](https://github.com/microsoft/STL), but since
-Microsoft's customers cannot abide to a binary attribution clause, code
+Microsoft's customers cannot abide by a binary attribution clause, code
 inside the STL can only use a license that doesn't impose one. As explained
 by Stephan T. Lavavej in [this Reddit comment](https://www.reddit.com/r/cpp/comments/gr18ig/faster_integer_parsing/frxbit4/),
 the two licenses that meet this requirement are the Boost Software License and the
-[Apache 2.0 License with LLVM Exception](https://llvm.org/foundation/relicensing/LICENSE.txt).
+[Apache 2.0 License with LLVM Exception](https://llvm.org/foundation/relicensing/LICENSE.txt),
+and the Boost license is simpler, clearer, better known, and already
+pre-approved in many organizations.
+
+Use it.
