@@ -162,6 +162,7 @@ public:
 
 This is [how it's used](https://godbolt.org/z/x17fdY):
 
+{% raw %}
 ```
 auto f()
 {
@@ -170,4 +171,5 @@ auto f()
 }
 ```
 
-Again, apart from the odd ` {{ ... }} ` syntax, not that bad.
+Again, apart from the odd `{{ ... }}` syntax, not that bad.
+{% endraw %}
