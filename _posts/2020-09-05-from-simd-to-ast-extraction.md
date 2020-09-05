@@ -54,7 +54,7 @@ template<class T> T g( T x, T y )
 }
 ```
 
-This still lets us to call them with `float` as before, but
+This still lets us call them with `float` as before, but
 it also enables us calling them with a
 [SIMD pack of four floats](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html):
 
