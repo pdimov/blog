@@ -4,7 +4,7 @@ title: Named Parameters in C++20
 hidden: true
 ---
 
-A programming language supports _Named Parameters_ when one
+A programming language supports _named parameters_ when one
 can call a function supplying the parameters by name, as in
 the following hypothetical example (using C++ syntax):
 
