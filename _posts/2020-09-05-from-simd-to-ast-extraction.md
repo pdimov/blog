@@ -39,8 +39,8 @@ of [-O2](https://godbolt.org/z/63hqG4) to GCC. But let's
 suppose, for the sake of discussion, that it's 2008, the
 compilers don't autovectorize, and we still want to employ SIMD.
 
-One elegant technique that allowed us to keep our functions
-mostly as-is was to convert them to templates:
+One elegant technique that allows us to keep our functions
+mostly as-is is to convert them to templates:
 
 ```
 template<class T> T f( T x )
@@ -55,14 +55,15 @@ template<class T> T g( T x, T y )
 ```
 
 This still lets us to call them with `float` as before, but
-it also enables us calling them with a SIMD pack of four floats:
+it also enables us calling them with a
+[SIMD pack of four floats](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html):
 
 ```
 using m128 = __attribute__(( vector_size( 4*sizeof(float) ) )) float;
 ```
 
 so that we can now rewrite `h` to
-[work at four elements at a time](https://godbolt.org/z/8jEc4r):
+[work at four elements at a time](https://godbolt.org/z/zh3Tbv):
 
 ```
 void h( float const * x, float const * y, float * z, std::size_t n )
@@ -77,7 +78,7 @@ void h( float const * x, float const * y, float * z, std::size_t n )
         m128 my;
         std::memcpy( &my, y + i, sizeof( m128 ) );
 
-        m128 mz = g( f( mx ), f( my ) );
+        m128 mz = g( mx, my );
 
         std::memcpy( z + i, &mz, sizeof( m128 ) );
     }
