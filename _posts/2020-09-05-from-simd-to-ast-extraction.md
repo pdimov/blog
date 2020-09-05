@@ -34,12 +34,11 @@ void h( float const * x, float const * y, float * z, std::size_t n )
 
 Nowadays, all major compilers
 [automatically vectorize](https://godbolt.org/z/q148se)
-this code and generate SIMD instructions for it - at most,
+this code and generate SIMD instructions for it -- at most,
 we need to pass [-O3](https://godbolt.org/z/c71vo5) instead
 of [-O2](https://godbolt.org/z/63hqG4) to GCC. But let's
 suppose, for the sake of discussion, that it's 2008, the
-compilers don't autovectorize, and we want to employ SIMD
-by hand.
+compilers don't autovectorize, and we still want to employ SIMD.
 
 One elegant technique that allowed us to keep our functions
 mostly as-is was to convert them to templates:
@@ -56,14 +55,14 @@ template<class T> T g( T x, T y )
 }
 ```
 
-This still allows us to call them with `float` as before, but
+This still lets us to call them with `float` as before, but
 it also enables us calling them with a SIMD pack of four floats:
 
 ```
 using m128 = __attribute__(( vector_size( 4*sizeof(float) ) )) float;
 ```
 
-so that now we can rewrite `h` to
+so that we can now rewrite `h` to
 [work at four elements at a time](https://godbolt.org/z/8jEc4r):
 
 ```
