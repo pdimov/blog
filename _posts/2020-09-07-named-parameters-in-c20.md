@@ -170,4 +170,4 @@ auto f()
 }
 ```
 
-Again, apart from the odd `{{ ... }}` syntax, not that bad.
+Again, apart from the odd ` {{ ... }} ` syntax, not that bad.
