@@ -97,8 +97,9 @@ an extension, and it works under [MSVC](https://godbolt.org/z/bKozaW)
 with `-std:c++latest`.
 
 For a more realistic example, consider this snippet, taken from real
-code, that sets a 10 second timeout on a
-[Boost.Beast](https://boost.org/libs/beast) websocket:
+code, that sets a 10 second
+[timeout](https://www.boost.org/doc/libs/1_74_0/libs/beast/doc/html/beast/using_websocket/timeouts.html)
+on a [Boost.Beast](https://boost.org/libs/beast) websocket:
 
 ```
 #include <boost/beast/websocket/stream.hpp>
