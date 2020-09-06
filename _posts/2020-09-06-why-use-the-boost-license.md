@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Why You Should Use the Boost Software License
-hidden: true
 ---
 
 Because it doesn't require attribution for binaries.
