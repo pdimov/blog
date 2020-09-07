@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Named Parameters in C++20
-hidden: true
 ---
 
 A programming language supports _named parameters_ when one
