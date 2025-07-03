@@ -8,6 +8,7 @@ I authored and maintain the following [Boost](https://www.boost.org/) libraries:
 * [Assert](https://boost.org/libs/assert)
 * [Bind](https://boost.org/libs/bind)
 * [Describe](https://boost.org/libs/describe)
+* [Hash2](https://boost.org/libs/hash2) (with Christian Mazakas)
 * [Lambda2](https://boost.org/libs/lambda2)
 * [Mp11](https://boost.org/libs/mp11)
 * [SmartPtr](https://boost.org/libs/smart_ptr) (with Glen Fernandes)
@@ -16,12 +17,15 @@ I authored and maintain the following [Boost](https://www.boost.org/) libraries:
 
 and additionally maintain and develop
 
+* [Array](https://boost.org/libs/array)
+* [Compat](https://boost.org/libs/compat) (with Christian Mazakas)
 * [ContainerHash](https://boost.org/libs/container_hash)
 * [Core](https://boost.org/libs/core) (with Andrey Semashev and Glen Fernandes)
 * [Endian](https://boost.org/libs/endian)
 * [Function](https://boost.org/libs/function)
 * [System](https://boost.org/libs/system)
 * [Timer](https://boost.org/libs/timer)
+* [UUID](https://boost.org/libs/uuid)
 
 and contribute to
 
